@@ -1,20 +1,178 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercices jQuery Part2</title>
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <style>
+        .color {
+            float: left;
+            width: 20px;
+            height: 20px;
+            margin: 5px;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+    </style>
 </head>
 <h1>Exercices jQuery Partie 2</h1>
+
 <body>
     <h2>Exo 1</h2>
     <p>Au clic sur le bouton, afficher une boite de dialogue avec le message de votre choix.</p>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
-  <script>
 
-  </script>
+    <button id="clique-moi">Clique moi!</button>
+    <h2>Exo 2</h2>
+    <p>Au double click, modifier la largeur de l'image à 500px</p>
+    <img style="width: 700px" src="clouds.jpeg" alt="les nuages">
+    <h2>Exo 3</h2>
+    <p>Afficher ou masquer la div texte au clic des liens fournis.</p>
+    <a id="afficher" href="#">Afficher</a>
+    <a id="cacher" href="#">Masquer</a>
+    <div id="texte">
+        <p>Joseph Dacre Carlyle (Carlisle, 4 juin 1758 - Newcastle upon Tyne, 12 avril 1804) est un orientaliste
+            anglais.Après ses études à l'université de Cambridge, il y devint professeur d'arabe. En 1799, il fut
+            attaché par le gouvernement britannique à l'ambassade de Lord Elgin dans l'Empire ottoman. Il était chargé
+            d'explorer les bibliothèques de la région (principalement celle du Sérail) pour y découvrir (et y acquérir)
+            des manuscrits inédits de textes antiques. Il se rendit aussi en Égypte, en Terre sainte et au mont Athos.
+            Sa mission fut, de son point de vue, un échec. Il acheta quelques centaines d'ouvrages, principalement dans
+            les bazars de Constantinople, mais aucun ne contenait de texte inédit. Cependant, la façon dont certains
+            manuscrits avaient été acquis, principalement ceux du patriarche de Jérusalem Anthème Ier, ainsi que la
+            querelle entamée sur la plaine de Troie entre Carlyle et un autre professeur de Cambridge, Edward Daniel
+            Clarke, allaient être utilisées, après la mort de Carlyle, contre Lord Elgin, dans les controverses autour
+            de l'acquisition des « marbres d'Elgin ».De retour en Grande-Bretagne à l'automne 1801, Joseph Dacre Carlyle
+            entama une traduction en arabe de la Bible. Sa mort en avril 1804 coupa court à ce travail.</p>
+    </div>
+    <h2>Exo 4</h2>
+    <p>Au clic sur un bouton de couleur, modifier la couleur du texte de la div</p>
+    <div id="texteTara">
+        <p>Tara, originellement nommée Antarctica puis Seamaster, est une goélette française destinée à la fois à
+            l'exploration et à la défense de l'environnement. Dans le cadre de l'Année polaire internationale, en
+            2007-2008, ce voilier est utilisé en Arctique par l'expédition Tara Arctic dans le but de faire des relevés
+            permettant de mieux comprendre les changements climatiques qui s'opèrent en Arctique. En 2009, dans le cadre
+            de l'expédition Tara Oceans, Tara parcourt les mers et les océans dans une circumnavigation de trois ans
+            afin d'étudier le piégeage des molécules de gaz carbonique (CO2) par les micro-organismes marins comme le
+            plancton. En avril 2016, une nouvelle expédition est montée Tara Pacific dont l'objectif est de comprendre
+            le corail, menacé par des facteurs humains et climatiques1.</p>
+    </div>
+    <div>
+        <div class="color green" id="green"></div>
+        <div class="color red" id="red"></div>
+        <div class="color blue" id="blue"></div>
+    </div>
+    <br>
+    <h2>Exo5</h2>
+    <p>Quand un champ a le focus, définir sa bordure à "1px solid green". Quand le champ perd le focus, définir la
+        bordure à "1px solid red"</p>
+    <form>
+        <label for="nom">Nom : </label><input type="text" name="nom" id="nom" />
+        <label for="prenom">Prénom : </label><input type="text" name="prenom" id="prenom" />
+        <button type="button" name="button">Envoyer</button>
+    </form>
+    <h2>Exo6</h2>
+    <p>Au passage de la souris sur un bouton de couleur, colorer le texte. Le texte doit redevenir noir quand la souris
+        quitte le bouton.
+    </p>
+    <div id="texteExo6">
+        <p>
+            Tara, originellement nommée Antarctica puis Seamaster, est une goélette française destinée à la fois à
+            l'exploration et à la défense de l'environnement. Dans le cadre de l'Année polaire internationale, en
+            2007-2008, ce voilier est utilisé en Arctique par l'expédition Tara Arctic dans le but de faire des relevés
+            permettant de mieux comprendre les changements climatiques qui s'opèrent en Arctique. En 2009, dans le cadre
+            de l'expédition Tara Oceans, Tara parcourt les mers et les océans dans une circumnavigation de trois ans
+            afin d'étudier le piégeage des molécules de gaz carbonique (CO2) par les micro-organismes marins comme le
+            plancton. En avril 2016, une nouvelle expédition est montée Tara Pacific dont l'objectif est de comprendre
+            le corail, menacé par des facteurs humains et climatiques1.
+        </p>
+    </div>
+    <div>
+        <div class="color green" id="green1"></div>
+        <div class="color red" id="red1"></div>
+        <div class="color blue" id="blue1"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        //Exo1
+        $(function () {
+            $("#clique-moi").click(function () {
+                alert("Bravo!!!!");
+            });
+        });
+
+        //Exo2
+        $(document).ready(function () {
+            $('img').dblclick(function () {
+                $(this).css('width', '500');
+            });
+        });
+
+        //Exo 3
+        $(document).ready(function () {
+            $("#cacher").click(function () {
+                $("#texte").hide();
+            });
+            $("#afficher").click(function () {
+                $("#texte").show();
+            });
+        });
+
+        // Exo 4
+        $(document).ready(function () {
+            $('#green').click(function () {
+                $('#texteTara').css('color', 'green');
+            });
+            $('#red').click(function () {
+                $('#texteTara').css('color', 'red');
+            });
+            $('#blue').click(function () {
+                $('#texteTara').css('color', 'blue');
+            });
+        });
+
+        //Exo 5
+        $(document).ready(function () {
+            $("input").focusin(function () {
+                $(this).css("border", "4px solid green");
+            });
+            $("input").focusout(function () {
+                $(this).css("border", "1px solid red");
+            });
+        });
+
+        //Exo 6
+        $(document).ready(function () {
+            $('#green1').mouseenter(function () {
+                $('#texteExo6').css('color', 'green');
+            });
+            $('#red1').mouseenter(function () {
+                $('#texteExo6').css('color', 'red');
+            });
+            $('#blue1').mouseenter(function () {
+                $('#texteExo6').css('color', 'blue');
+            });
+            $('#green1, #red1, #blue1').mouseleave(function () {
+                $('#texteExo6').css('color', 'black');
+            });
+        });
+
+    </script>
 </body>
+
 </html>
